@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, SafeAreaView, StyleSheet, Image } from 'react-native';
+import { View, Text, SafeAreaView, StyleSheet, Image, TextInput } from 'react-native';
 import { COLORS, SIZES, images, FONTS, icons } from '../constants';
 
 
-
-//importing styles
-import rootStyles from '../styles/rootStyles';
+//importing custom component
+import Spacer from '../components/Spacer';
 
 
 
@@ -22,7 +21,10 @@ const Home = () => {
                 <View style={styles.avatarSection}>
                     <Image source={images.avatar2} style={styles.avatar} />
                 </View>
-                <Text style={{ ...FONTS.body2 }}>Rannade, Shilaj</Text>
+                <View style={styles.locationSection}>
+                    <Image source={icons.location} style={{ ...styles.icon, width: 18 }} resizeMode="contain" />
+                    <Text style={styles.locationText}>Rannade, Shilaj</Text>
+                </View>
                 <View style={styles.notificationSection}>
                     <Image source={icons.notification} style={styles.icon} resizeMode="contain" />
                 </View>
@@ -35,10 +37,7 @@ const Home = () => {
         return (
             <View style={styles.searchAndFilterSection}>
                 <View style={styles.searchSection}>
-                    <View style={styles.searchIconSection}>
-                        <Image source={icons.filter} style={styles.icon} resizeMode="contain" />
-                    </View>
-                    <Text style={{ ...FONTS.body2 }}>Search</Text>
+
                 </View>
                 <View style={styles.filterSection}>
                     <View style={styles.filterIconSection}>
@@ -59,7 +58,7 @@ const Home = () => {
         <SafeAreaView style={styles.body}>
             {/** render header for home screen */}
             {renderHeader()}
-
+            <Spacer space={2} />
             {/** render search for home screen */}
             {renderSearch()}
 
@@ -115,6 +114,18 @@ const styles = StyleSheet.create({
         elevation: 10,
 
     },
+    locationSection: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    locationText: {
+        ...FONTS.body2,
+        fontSize: SIZES.font * 1.3,
+        marginLeft: SIZES.padding / 4,
+        color: COLORS.black,
+
+    },
     icon: {
         tintColor: COLORS.lightBrown,
         height: SIZES.padding,
@@ -129,10 +140,12 @@ const styles = StyleSheet.create({
 
     searchSection: {
         height: SIZES.height * .06,
-        backgroundColor: COLORS.lightGray,
+        backgroundColor: COLORS.white,
+        width: SIZES.width * .7,
         borderRadius: SIZES.radius * 1.5,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'center',
         paddingHorizontal: SIZES.padding,
         marginTop: SIZES.margin,
     },

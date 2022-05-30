@@ -3,6 +3,7 @@ const cart = require("../assets/icons/cart.png")
 const account = require("../assets/icons/account.png")
 const notification = require("../assets/icons/notification.png")
 const filter = require("../assets/icons/filter.png")
+const location = require("../assets/icons/location.png")
 const staff = require("../assets/icons/people.png")
 
 
@@ -12,5 +13,6 @@ export default {
     account,
     filter,
     notification,
+    location,
     staff,
 }

@@ -3,8 +3,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //importing screens
 import Home from '../screens/Home';
 import Team from '../screens/Team';
-import Cart from '../screens/Cart';
+import Shop from '../screens/Shop';
 import Account from '../screens/Account';
+
+
+
+//importing
 import { Image } from 'react-native';
 import { COLORS, icons, SIZES } from '../constants';
 
@@ -34,8 +38,8 @@ const ScreenOptions = ({ route }) => {
                 iconName = icons.home;
             } else if (route.name === 'Team') {
                 iconName = icons.staff;
-            } else if (route.name === 'Cart') {
-                iconName = icons.cart;
+            } else if (route.name === 'Shop') {
+                iconName = icons.cake;
             } else if (route.name === 'Profile') {
                 iconName = icons.account;
             }
@@ -52,7 +56,7 @@ export default function Tabs() {
         <Tab.Navigator screenOptions={ScreenOptions}>
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Team" component={Team} />
-            <Tab.Screen name="Cart" component={Cart} />
+            <Tab.Screen name="Shop" component={Shop} />
             <Tab.Screen name="Profile" component={Account} />
         </Tab.Navigator>
     );

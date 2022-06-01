@@ -5,7 +5,7 @@ import Constants from 'expo-constants'
 export const COLORS = {
     lightBrown: "#ac7663",
     darkBrown: "#a04c31",
-
+    ultraLightBrown: "#FBF8F7",
     white: "#fff",
     white2: '#FBFDFF',
     black: "#121113",

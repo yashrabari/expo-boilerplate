@@ -13,7 +13,7 @@ export const COLORS = {
     gray: "#b0a7a9",
     darkGray: "#48444a",
     lightGray: '#ebe3e3',
-
+    primary: "#AC7663",
     transparent: 'transparent',
 };
 export const SIZES = {
@@ -34,7 +34,7 @@ export const SIZES = {
     body3: 16,
     body4: 14,
     body5: 12,
-
+    lineHeight: 24,
     // app dimensions
     width,
     height

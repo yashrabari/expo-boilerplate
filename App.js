@@ -1,6 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import RootStack from './navigation/RootStack';
 import { useFonts } from 'expo-font';
+import { AuthProvider } from './context/AuthContext';
 export default function App() {
 
   const [loaded] = useFonts({
@@ -14,10 +15,10 @@ export default function App() {
     return null;
   }
   return (
-    <>
-      <StatusBar backgroundColor='#fff' />
+    <AuthProvider>
+      <StatusBar translucent backgroundColor="transparent" barStyle='dark-content' />
       <RootStack />
 
-    </>
+    </AuthProvider>
   );
 }

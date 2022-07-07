@@ -10,6 +10,7 @@ import { AuthContext } from '../context/AuthContext';
 import Login from '../screens/Login'
 import OnBoarding from '../screens/OnBoarding'
 import Tabs from './TabNavigation'
+import Details from '../screens/Details'
 
 //creating stack navigator
 const Stack = createStackNavigator()
@@ -36,11 +37,15 @@ const RootStack = () => {
             <Stack.Navigator>
                 {
                     user ? (
-                        <Stack.Screen options={ScreenOptions} name='Tabs' component={Tabs} />
-                    ) : (
                         <>
                             <Stack.Screen options={ScreenOptions} name='Onboarding' component={OnBoarding} />
                             <Stack.Screen options={ScreenOptions} name='Login' component={Login} />
+                        </>
+                    ) : (
+                        <>
+                            <Stack.Screen options={ScreenOptions} name='Tabs' component={Tabs} />
+                            <Stack.Screen options={ScreenOptions} name='Details' component={Details} />
+
                         </>
                     )
                 }

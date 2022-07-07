@@ -51,7 +51,7 @@ var cakeList = [
 
 
 
-const Home = () => {
+const Home = ({ navigation }) => {
 
     const [cakeData, setCakeData] = React.useState(cakeList);
 
@@ -102,7 +102,13 @@ const Home = () => {
 
     const RenderRecommendedItems = ({ cake }) => {
         return (
-            <View style={styles.recommendedItem}>
+            <TouchableOpacity
+                onPress={() => navigation.navigate("Details", {
+                    item: cake
+
+                })}
+                style={styles.recommendedItem}>
+                {console.log(cake)}
                 <ImageBackground source={cake.image} style={styles.recommendedItemImageBackground}>
 
                     <LinearGradient
@@ -131,7 +137,7 @@ const Home = () => {
                     </View>
                 </ImageBackground>
 
-            </View>
+            </TouchableOpacity>
         )
     }
 
@@ -342,56 +348,24 @@ const styles = StyleSheet.create({
     divSection: {
         paddingHorizontal: SIZES.padding,
     },
-    recommendedItemImageBackground: {
-        height: SIZES.height * .4,
-        width: SIZES.width * .7,
-        borderRadius: SIZES.radius * 1.5,
-        overflow: 'hidden',
-        marginTop: SIZES.margin,
-    },
+
     heading: {
         ...FONTS.h2,
         color: COLORS.darkGray,
         marginVertical: SIZES.padding / 2,
     },
-    recommendedText: {
-        ...FONTS.h2,
-        color: COLORS.white,
-    },
+
     listHolder: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-    },
-    recommendedTextHolder: {
-        marginVertical: SIZES.padding / 2,
-        marginHorizontal: SIZES.padding,
-        position: 'absolute',
-        bottom: 0,
-        zIndex: 5,
     },
     rating: {
         ...FONTS.body2,
         fontSize: SIZES.font * 1.3,
         color: COLORS.white,
     },
-    recommendedItem: {
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginRight: SIZES.padding / 2,
-        paddingVertical: SIZES.padding / 2,
-        borderBottomWidth: 1,
-        borderBottomColor: COLORS.lightGray,
-    },
-    darkOverlay: {
-        position: 'absolute',
-        height: SIZES.height * .4,
-        width: SIZES.width * .7,
-        borderRadius: SIZES.radius * 1.5,
-        overflow: 'hidden',
 
-        zIndex: 4
-    },
     lastOrderItem: {
         width: SIZES.width * .7,
         flexDirection: 'row',
@@ -424,6 +398,42 @@ const styles = StyleSheet.create({
         marginTop: SIZES.padding / 4,
         ...FONTS.body4,
         color: COLORS.darkGray,
+    },
+    recommendedText: {
+        ...FONTS.h2,
+        color: COLORS.white,
+    },
+    recommendedTextHolder: {
+        marginVertical: SIZES.padding / 2,
+        marginHorizontal: SIZES.padding,
+        position: 'absolute',
+        bottom: 0,
+        zIndex: 5,
+    },
+
+    recommendedItemImageBackground: {
+        height: SIZES.height * .4,
+        width: SIZES.width * .7,
+        borderRadius: SIZES.radius * 1.5,
+        overflow: 'hidden',
+        marginTop: SIZES.margin,
+    },
+    recommendedItem: {
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginRight: SIZES.padding / 2,
+        paddingVertical: SIZES.padding / 2,
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.lightGray,
+    },
+    darkOverlay: {
+        position: 'absolute',
+        height: SIZES.height * .4,
+        width: SIZES.width * .7,
+        borderRadius: SIZES.radius * 1.5,
+        overflow: 'hidden',
+
+        zIndex: 4
     },
     bookMark: {
         position: 'absolute',

@@ -7,6 +7,7 @@ const bookmark = require("../assets/icons/bookmark.png")
 const location = require("../assets/icons/location.png")
 const cake = require("../assets/icons/cake.png")
 const search = require("../assets/icons/search.png")
+const left = require("../assets/icons/left.png")
 const staff = require("../assets/icons/people.png")
 const star = require("../assets/icons/star.png")
 
@@ -20,6 +21,7 @@ export default {
     notification,
     bookmark,
     location,
+    left,
     staff,
     cake,
     star

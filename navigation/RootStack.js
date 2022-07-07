@@ -10,7 +10,7 @@ import { AuthContext } from '../context/AuthContext';
 import Login from '../screens/Login'
 import OnBoarding from '../screens/OnBoarding'
 import Tabs from './TabNavigation'
-import Details from '../screens/Details'
+import Details from '../screens/DetailsScreen'
 
 //creating stack navigator
 const Stack = createStackNavigator()

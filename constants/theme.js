@@ -8,6 +8,7 @@ export const COLORS = {
     ultraLightBrown: "#FBF8F7",
     white: "#fff",
     white2: '#FBFDFF',
+    white3: '#F9F9F9',
     black: "#121113",
     blue: "#647993",
     gray: "#b0a7a9",
